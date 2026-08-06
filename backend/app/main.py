@@ -4,15 +4,13 @@ from database import engine, Base, SessionLocal
 from fastapi.security import OAuth2PasswordRequestForm
 import models
 import schemas
-
 from auth import get_current_user
 from hashing import hash_password, verify_password
 from security import create_access_token, create_refresh_token
-
 from jose import jwt, JWTError, ExpiredSignatureError
 from dotenv import load_dotenv
 import os
-
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
@@ -26,6 +24,20 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+Base.metadata.create_all(bind=engine)
+print("CORS LOADED")
 
 def get_db():
 

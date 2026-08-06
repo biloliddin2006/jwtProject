@@ -109,3 +109,33 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.form{
+  width: 300px;
+  height: 35px;
+  border-radius: 15px;
+  border: none;
+  padding-inline: 10px;
+  font-size: 15px;
+}
+
+.submitBtn{
+  width: 100px;
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+  background-color:#484c52;
+  margin-top: 10px;
+}
+
+.submitBtn:active{
+  opacity: 0.7;
+}
