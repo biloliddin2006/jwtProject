@@ -1,5 +1,6 @@
 import axios from "axios";
 
-export const API = axios.create({
+export const API = axios.create({gi
     baseURL: "/api"
+    
 })
