@@ -1,1 +1,1 @@
-JWT Project.
+JWT Project and authorization!
